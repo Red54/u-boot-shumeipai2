@@ -124,6 +124,9 @@
 #define CONFIG_SYS_MEMTEST_END		(CONFIG_SYS_SDRAM_BASE + 256<<20)	/* 256M */
 #define CONFIG_SYS_LOAD_ADDR		0x50000000					/* default load address */
 
+/* standalone support */
+#define CONFIG_STANDALONE_LOAD_ADDR	0x50000000
+
 #define CONFIG_SYS_HZ				1000
 
 /* valid baudrates */
@@ -234,8 +237,10 @@
 #define CONFIG_SYS_I2C_SLAVE		0x7f
 #define CONFIG_CMD_I2C
 
+#ifndef CONFIG_NO_AXP
 /* PMU */
 #define CONFIG_SPL_POWER_SUPPORT
 #define CONFIG_AXP209_POWER
+#endif
 
 #endif /* __CONFIG_H */
